@@ -7,9 +7,7 @@ Auto update a CMake project version from Git tags.
 
 <br>
 
-1. Set the `PROJECT_NAME` variable.
-
-2. Check that git exists, eg: 
+1. Check that git exists, eg: 
     ```cmake 
         find_package(Git)
         if(GIT_FOUND)
@@ -19,12 +17,12 @@ Auto update a CMake project version from Git tags.
         endif()
     ```
 
-3. Include the module:
+2. Include the module:
     ```cmake
     include("path/to/cmake-git-versioning.cmake")
     ```
 
-4. You now have access to the [Output Variables](#output-variables).
+3. You now have access to the [Output Variables](#output-variables).
 
 <br>
 
@@ -42,7 +40,6 @@ When you want to update the current version of your project, tag a commit with a
 
 This module:
 
-- Requires `PROJECT_NAME` to be set.
 - Uses `GIT_FOUND` to check if git is present.
 - Uses `GIT_EXECUTABLE` to call git.
 
@@ -95,43 +92,43 @@ The following variables will be set ( eg. complete latest git version tag: `v2.3
 
 <br>
 
-- `${PROJECT_NAME}_VERSION_STRING` 
+- `PROJECT_VERSION_STRING` 
     > Version string without metadata. Directly corresponds to the latest version tag (`v2.3.1-RC.7`)
 
-- `${PROJECT_NAME}_VERSION_STRING_FULL`
+- `PROJECT_VERSION_STRING_FULL`
     > Version string with added git metadata (`v2.3.1-RC.7+21.ef12c8`)
 
-- `${PROJECT_NAME}_VERSION` 
-    > Same as `${PROJECT_NAME}_VERSION_STRING`, without preceding letters (`2.3.1-RC.7`)
+- `PROJECT_VERSION` 
+    > Same as `PROJECT_VERSION_STRING`, without preceding letters (`2.3.1-RC.7`)
 
-- `${PROJECT_NAME}_VERSION_MAJOR` 
+- `PROJECT_VERSION_MAJOR` 
     > Major version number (`2`)
 
-- `${PROJECT_NAME}_VERSION_MINOR`
+- `PROJECT_VERSION_MINOR`
     > Minor version number (`3`)
 
-- `${PROJECT_NAME}_VERSION_PATCH`
+- `PROJECT_VERSION_PATCH`
     > Patch version number (`1`)
 
-- `${PROJECT_NAME}_VERSION_MMP` 
+- `PROJECT_VERSION_MMP` 
     > Simple `major.minor.patch` version string (`2.3.1`)
 
-- `${PROJECT_NAME}_VERSION_TWEAK_NAME`
+- `PROJECT_VERSION_TWEAK_NAME`
     > Tweak version name (`RC`)
 
-- `${PROJECT_NAME}_VERSION_TWEAK_NUMBER`
+- `PROJECT_VERSION_TWEAK_NUMBER`
     > Tweak version number : (`7`)
 
-- `${PROJECT_NAME}_VERSION_TWEAK_FULL`
+- `PROJECT_VERSION_TWEAK_FULL`
     > Tweak version full string (`RC.7`)
 
-- `${PROJECT_NAME}_VERSION_COMMITS_AHEAD`
+- `PROJECT_VERSION_COMMITS_AHEAD`
     > Number of commits ahead of last tag (`21`)
 
-- `${PROJECT_NAME}_VERSION_COMMIT_SHA`
+- `PROJECT_VERSION_COMMIT_SHA`
     > Git SHA1 of the most recent commit (`ef12c8`)
 
-- `${PROJECT_NAME}_VERSION_CMAKE`
+- `PROJECT_VERSION_CMAKE`
     > CMake compatible VERSION string, uses the `_TWEAK_NUMBER` as the build number (`2.3.1.7`)
 
 <br>
