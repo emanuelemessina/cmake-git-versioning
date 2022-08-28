@@ -1,5 +1,5 @@
 # cmake-git-versioning
-Auto update a CMake project version from Git tags.
+A CMake module to auto update the project version numbers from Git tags.
 
 <br>
 
